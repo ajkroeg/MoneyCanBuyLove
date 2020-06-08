@@ -17,7 +17,7 @@ Faction rep changes are based on the current star system ownerID (actually `CurS
 		"MaxRepLimit": 20
 		},
   ```  
-`RepItemDefTypeAndID` defines the (custom, user-created) item which modifies reputation.
+`RepItemDefTypeAndID` defines the (custom, user-created) item which modifies reputation. User is responsible for creating said item and adding it to shops.
 
 `excludedFactions` define faction(s) for which the player is unable to purchase reputation <i>even if the item appears in their store</i>. Players can purchase the items, but they will have no effect.
 
