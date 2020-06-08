@@ -1,5 +1,5 @@
 # MoneyCanBuyLove
-Purchase faction rep in shops!
+The Beatles were wrong! Money <i>can</i> buy you love!
 
 Mod adds the ability for store items to increase reputation. Each reputation "item" will alter faction rep by the amount defined in the mod.json settings. Reputation changes take place at the end of the current day, and reputation items are removed from inventory at this time.
 
