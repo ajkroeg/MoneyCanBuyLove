@@ -1,7 +1,7 @@
 # MoneyCanBuyLove
 The Beatles were wrong! Money <i>can</i> buy you love!
 
-Mod adds the ability for store items to increase reputation. Each reputation "item" will alter faction rep by the amount defined in the mod.json settings. Reputation changes take place at the end of the current day, and reputation items are removed from inventory at this time.
+Mod adds the ability for specified store items to increase reputation. Each reputation "item" will alter faction rep by the amount defined in the mod.json settings. Reputation changes take place at the end of the current day, and reputation items are removed from inventory at this time.
 
 Faction rep changes are based on the current star system ownerID (actually `CurSystem.Def.OwnerValue.FriendlyName`), NOT the shop owner ID.
 
