@@ -11,6 +11,10 @@
 
 	"Settings": {
 		"RepItemDefTypeAndID": "Item.HeatSinkDef.Gear_HeatSink_Generic_Standard",
+		"SpecFactionRepItemDefTypeAndID": "Item.HeatSinkDef.Gear_HeatSink_Generic_Standard",
+		"SpecFactionID": "AuriganPirates",
+		"SpecFactionRepModifier": 15,
+		"SpecFactionMaxRepLimit": 20,
 		"excludedFactions": [
 			"ClanJadeFalcon",
 			"ClanWolf",
