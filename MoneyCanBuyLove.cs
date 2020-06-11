@@ -13,7 +13,22 @@ namespace MoneyCanBuyLove
             {
 
                 int countRep = __instance.CompanyStats.GetValue<int>(ModInit.Settings.RepItemDefTypeAndID);
+                int countSPFRep = __instance.CompanyStats.GetValue<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID);
+
                 string Owner = __instance.CurSystem.Def.OwnerValue.FriendlyName;
+
+                int getSPFRep = __instance.CompanyStats.GetValue<int>("Reputation." + ModInit.Settings.SpecFactionID);
+                int modSPFRep = (countRep * ModInit.Settings.SpecFactionRepModifier) + getSPFRep;
+                if (modSPFRep > ModInit.Settings.SpecFactionMaxRepLimit)
+                {
+                    __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, ModInit.Settings.SpecFactionMaxRepLimit);
+                    __instance.CompanyStats.Set<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID, 0);
+                }
+                else
+                    __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, modSPFRep);
+                __instance.CompanyStats.Set<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID, 0);
+
+
 
                 bool exclude = ModInit.Settings.excludedFactions.Any((string XFact) => __instance.CurSystem.Def.OwnerValue.FriendlyName.Contains(XFact));
                 if (exclude == true)

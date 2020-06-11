@@ -1,0 +1,23 @@
+{
+    "Name": "Money Can Buy Love",
+    "DLL": "MoneyCanBuyLove.dll",
+
+    "Version": "1.0.0.1",
+    "Description": "",
+    "Author": "T-Bone",
+    "Website": "https://github.com/ajkroeg/MoneyCanBuyLove",
+    "ConflictsWith": [],
+    "CustomResourceTypes": [],
+
+	"Settings": {
+		"RepItemDefTypeAndID": "Item.HeatSinkDef.Gear_HeatSink_Generic_Standard",
+		"excludedFactions": [
+			"ClanJadeFalcon",
+			"ClanWolf",
+			"ClanGhostBear"
+			],
+		"RepModifier": 15,
+		"MaxRepLimit": 20
+		},
+    "Manifest": []
+}

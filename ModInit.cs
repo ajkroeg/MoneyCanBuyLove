@@ -26,6 +26,11 @@ namespace MoneyCanBuyLove
     public class MCBLSettings
     {
         public string RepItemDefTypeAndID = "Item.HeatSinkDef.Gear_HeatSink_Generic_Standard";
+        public string SpecFactionRepItemDefTypeAndID = "Item.HeatSinkDef.Gear_HeatSink_Generic_Standard";
+        public string SpecFactionID = "AuriganPirates";
+        public int SpecFactionRepModifier = 15;
+        public int SpecFactionMaxRepLimit = 20;
+
         public string[] excludedFactions = { "ClanJadeFalcon", "ClanWolf", "ClanGhostBear" };
         public int RepModifier = 15;
         public int MaxRepLimit = 20;
