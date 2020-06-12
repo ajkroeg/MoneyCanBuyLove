@@ -18,7 +18,7 @@ namespace MoneyCanBuyLove
                 string Owner = __instance.CurSystem.Def.OwnerValue.FriendlyName;
 
                 int getSPFRep = __instance.CompanyStats.GetValue<int>("Reputation." + ModInit.Settings.SpecFactionID);
-                int modSPFRep = (countRep * ModInit.Settings.SpecFactionRepModifier) + getSPFRep;
+                int modSPFRep = (countSPFRep * ModInit.Settings.SpecFactionRepModifier) + getSPFRep;
                 if (modSPFRep > ModInit.Settings.SpecFactionMaxRepLimit)
                 {
                     __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, ModInit.Settings.SpecFactionMaxRepLimit);
