@@ -19,15 +19,21 @@ namespace MoneyCanBuyLove
 
                 int getSPFRep = __instance.CompanyStats.GetValue<int>("Reputation." + ModInit.Settings.SpecFactionID);
                 int modSPFRep = (countSPFRep * ModInit.Settings.SpecFactionRepModifier) + getSPFRep;
-                if (modSPFRep > ModInit.Settings.SpecFactionMaxRepLimit)
+                if (getSPFRep > ModInit.Settings.SpecFactionMaxRepLimit)
+                {
+                    __instance.CompanyStats.Set<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID, 0);
+                    modSPFRep = 0;
+                }
+                else if (modSPFRep > ModInit.Settings.SpecFactionMaxRepLimit)
                 {
                     __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, ModInit.Settings.SpecFactionMaxRepLimit);
                     __instance.CompanyStats.Set<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID, 0);
+                    modSPFRep = 0;
                 }
                 else
-                    __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, modSPFRep);
+                __instance.CompanyStats.Set<int>("Reputation." + ModInit.Settings.SpecFactionID, modSPFRep);
                 __instance.CompanyStats.Set<int>(ModInit.Settings.SpecFactionRepItemDefTypeAndID, 0);
-
+                modSPFRep = 0;
 
 
                 bool exclude = ModInit.Settings.excludedFactions.Any((string XFact) => __instance.CurSystem.Def.OwnerValue.FriendlyName.Contains(XFact));
@@ -38,14 +44,21 @@ namespace MoneyCanBuyLove
                 }
                 int getRep = __instance.CompanyStats.GetValue<int>("Reputation." + Owner);
                 int modRep = (countRep * ModInit.Settings.RepModifier) + getRep;
-                if(modRep > ModInit.Settings.MaxRepLimit)
+                if (getRep > ModInit.Settings.MaxRepLimit)
+                {
+                    __instance.CompanyStats.Set<int>(ModInit.Settings.RepItemDefTypeAndID, 0);
+                    modRep = 0;
+                }
+                else if (modRep > ModInit.Settings.MaxRepLimit)
                 {
                     __instance.CompanyStats.Set<int>("Reputation." + Owner, ModInit.Settings.MaxRepLimit);
                     __instance.CompanyStats.Set<int>(ModInit.Settings.RepItemDefTypeAndID, 0);
+                    modRep = 0;
                 }
                 else
                 __instance.CompanyStats.Set<int>("Reputation." + Owner, modRep);
                 __instance.CompanyStats.Set<int>(ModInit.Settings.RepItemDefTypeAndID, 0);
+                modRep = 0;
             }
         }
     }
